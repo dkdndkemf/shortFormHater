@@ -3,11 +3,17 @@
 
     const removeDismissible = () => {
         document
-            .querySelectorAll('#dismissible')
-            .forEach(a => a.closest('#dismissible')?.remove());
+            .querySelectorAll('#dismissible.ytd-rich-shelf-renderer')
+            .forEach(a => a.closest('#dismissible.ytd-rich-shelf-renderer')?.remove());
         document
-            .querySelectorAll('#scroll-outer-container')
-            .forEach(a => a.closest('#scroll-outer-container')?.remove())
+            .querySelectorAll('#endpoint[title="Shorts"]')
+            .forEach(el => el.remove());
+        document
+            .querySelectorAll('yt-tab-shape[tab-title="Shorts"]')
+            .forEach(el => el.remove());
+        document
+            .querySelectorAll('#scroll-outer-container.yt-horizontal-list-renderer')
+            .forEach(a => a.closest('#scroll-outer-container.yt-horizontal-list-renderer')?.remove())
     };
 
     const schedule = () => {
